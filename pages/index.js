@@ -2,12 +2,17 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useQuery } from 'urql';
 import { PRODUCT_QUERY} from "../lib/query";
+import Products from "../components/Products";
 
 export default function Home() {
 
   const [results] = useQuery({query: PRODUCT_QUERY});
   const {data, fetching, error} = results;
-  const products = data.products.data;
+
+  if (fetching) return <p>Loading</p>
+  if (error) return <p>Error ... {error.message}</p>
+  const products = data.produits.data;
+
 
   return (
     <div >
@@ -19,11 +24,11 @@ export default function Home() {
 
       <main>
         <h1>Hello Next</h1>
-        {products.map((products) =><h1> {products.attributes.title}</h1>)}
+        {products.map((produits)=>(
+          <Products key ={produits.key} produits = {produits}/>
+        ))}
         <Link href={'/about'}>about</Link>
-      </main>
-
-     
+      </main>  
     </div>
   )
 }
