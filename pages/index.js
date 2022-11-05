@@ -4,10 +4,10 @@ import { useQuery } from 'urql';
 import { PRODUCT_QUERY} from "../lib/query";
 
 export default function Home() {
-  
+
   const [results] = useQuery({query: PRODUCT_QUERY});
   const {data, fetching, error} = results;
-  console.log(results);
+  const products = data.products.data;
 
   return (
     <div >
@@ -19,6 +19,7 @@ export default function Home() {
 
       <main>
         <h1>Hello Next</h1>
+        {products.map((products) =><h1> {products.attributes.title}</h1>)}
         <Link href={'/about'}>about</Link>
       </main>
 
