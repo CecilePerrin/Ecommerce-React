@@ -8,6 +8,8 @@ export const ProductStyle = styled.div`
   padding : 1.5rem;
   img{
     width : 100%;
+    height:20rem;
+    object-fit: cover;
     cursor: pointer;
   }
   h2{
