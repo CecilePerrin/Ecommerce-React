@@ -6,19 +6,19 @@ import Cart from "../components/Cart"
 
 export default function Nav() {
 
-  const{showCart, setShowCart} = useStateContext()
+  const{showCart, setShowCart} = useStateContext();
 
   return (
     <Navstyles>
       <Link href={'/'}>Home</Link>
       <NavItems>
-      <div>
+      <div onClick={() => setShowCart(true)}>
         <div>
          <FiShoppingBag />
         </div>
       </div>
-      </NavItems>      
-      <Cart />
+      </NavItems> 
+      {showCart && <Cart />}     
     </Navstyles>
   )
 }

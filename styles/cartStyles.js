@@ -13,6 +13,53 @@ justify-content: flex-end;
 `;
 
 export const CartStyle = styled.div`
-width: 40%;
+width: 30%;
 background: #f1f1f1;
+padding: 2rem 3rem;
+overflow-y:scroll;
+position: relative;
+`
+
+export const Card = styled.div`
+display: flex;
+align-items: center;
+justify-content:space-between;
+border-radius:1rem;
+overflow: hidden;
+background: white;
+padding: 1rem;
+margin: 2rem 0rem;
+img{
+  width: 8rem;
+}`
+
+export const CardInfo = styled.div`
+width:50%
+div{
+  display: flex;
+  flex-direction: space-between;
+}`
+
+export const EmptyStyle = styled.div`
+position: absolute;
+top: 0;
+left: 50%;
+transform: translate(-50%, 0%);
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+height:100%;
+width:100%;
+h1{
+  font-size:2rem;
+  padding: 2rem;
+}
+svg{
+  font-size:5rem;
+  color: var(--secondary);
+}
+`;
+
+export const Quantity = styled.div`
 `
