@@ -61,5 +61,3 @@ svg{
 }
 `;
 
-export const Quantity = styled.div`
-`

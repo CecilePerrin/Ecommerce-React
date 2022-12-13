@@ -6,13 +6,13 @@ import {
   CartStyle,
   Card, 
   CardInfo , 
-  EmptyStyle,
-  Quantity} from '../styles/cartStyles'
+  EmptyStyle} from '../styles/cartStyles'
+  import { Quantity } from '../styles/productDetail'
   import {FaShoppingCart} from "react-icons/fa";
 
 const Cart = () => {
   
-  const{ cartItems, setShowCart} = useStateContext()
+  const{ cartItems, setShowCart, onAdd, onRemove} = useStateContext()
   return (
     <CartWrapper onClick={() => setShowCart(false)}>
       <CartStyle onClick={(e) => e.stopPropagation()}>
@@ -33,11 +33,11 @@ const Cart = () => {
                 <Quantity>
                  <span>Quantités</span>
                  <button>
-                   <AiFillMinusCircle />
+                   <AiFillMinusCircle onClick= {() => onRemove(items)}/>
                  </button>
                  <p>{items.quantity}</p>
                  <button>
-                  <AiFillPlusCircle />
+                  <AiFillPlusCircle onClick= {() => onAdd(items, 1)} />
                  </button>
                 </Quantity>
               </CardInfo>
