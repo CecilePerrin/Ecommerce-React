@@ -6,13 +6,15 @@ import {
   CartStyle,
   Card, 
   CardInfo , 
-  EmptyStyle} from '../styles/cartStyles'
+  EmptyStyle,
+  Checkout
+  } from '../styles/cartStyles'
   import { Quantity } from '../styles/productDetail'
   import {FaShoppingCart} from "react-icons/fa";
 
 const Cart = () => {
   
-  const{ cartItems, setShowCart, onAdd, onRemove} = useStateContext()
+  const{ cartItems, setShowCart, onAdd, onRemove, totalPrice} = useStateContext()
   return (
     <CartWrapper onClick={() => setShowCart(false)}>
       <CartStyle onClick={(e) => e.stopPropagation()}>
@@ -45,6 +47,14 @@ const Cart = () => {
             )
           })
         )}
+        {cartItems.length >= 1 && (
+          <div>
+            <h3>Subtotal: {totalPrice}€</h3>
+            <Checkout>Purchase</Checkout>
+          </div>
+        )
+
+        }
      </CartStyle>    
     </CartWrapper>
   )

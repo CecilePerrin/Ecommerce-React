@@ -61,3 +61,19 @@ svg{
 }
 `;
 
+export const Checkout = styled.button`
+  background-color: var(--peps);
+  padding: 0.8rem 2.5rem 0.8rem 2.5rem;
+  border-radius: 10px;
+  border:0;
+  width : 100%;
+  color: white;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  &:hover {
+    box-shadow: .15rem .25rem 10px rgb(126, 126, 126);
+    background: #d5b85e;
+  }
+
+`

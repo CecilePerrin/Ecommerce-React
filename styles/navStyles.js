@@ -31,7 +31,7 @@ svg {
   font-size: 1.5rem;
 }
 span {
-  background: #ff2626;
+  background: var(--peps);
   color: white;
   width: 1.2rem;
   height: 1.2rem;
@@ -45,5 +45,6 @@ span {
   top: -20%;
   font-weight: 700;
   pointer-events: none;
+  z-index : 2;
 }
 `
