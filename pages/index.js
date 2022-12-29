@@ -4,13 +4,14 @@ import { useQuery } from 'urql';
 import { PRODUCT_QUERY} from "../lib/query";
 import Products from "../components/Products";
 import { Gallery } from '../styles/gallery';
+import Loading from '../components/Loading';
 
 export default function Home() {
 
   const [results] = useQuery({query: PRODUCT_QUERY});
   const {data, fetching, error} = results;
 
-  if (fetching) return <p>Loading</p>
+  if (fetching) return <Loading/>
   if (error) return <p>Error ... {error.message}</p>
   const products = data.produits.data;
 
